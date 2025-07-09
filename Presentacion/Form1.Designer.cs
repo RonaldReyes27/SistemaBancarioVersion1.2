@@ -51,6 +51,7 @@
             panel1 = new Panel();
             MenuTransicion = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
+            pnlContent = new Panel();
             sidebar.SuspendLayout();
             panel2.SuspendLayout();
             menuContainer.SuspendLayout();
@@ -111,7 +112,7 @@
             menuContainer.Location = new Point(0, 59);
             menuContainer.Margin = new Padding(0);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(246, 68);
+            menuContainer.Size = new Size(246, 189);
             menuContainer.TabIndex = 6;
             // 
             // panel3
@@ -132,7 +133,7 @@
             btnMenu.Location = new Point(-7, -7);
             btnMenu.Margin = new Padding(0);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(262, 68);
+            btnMenu.Size = new Size(262, 65);
             btnMenu.TabIndex = 2;
             btnMenu.Text = "          Menu";
             btnMenu.TextAlign = ContentAlignment.MiddleLeft;
@@ -162,6 +163,7 @@
             button5.Text = "          Clientes";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // panel7
             // 
@@ -190,7 +192,7 @@
             // panel8
             // 
             panel8.Controls.Add(button2);
-            panel8.Location = new Point(3, 130);
+            panel8.Location = new Point(3, 251);
             panel8.Name = "panel8";
             panel8.Size = new Size(246, 53);
             panel8.TabIndex = 5;
@@ -213,7 +215,7 @@
             // panel4
             // 
             panel4.Controls.Add(button3);
-            panel4.Location = new Point(3, 189);
+            panel4.Location = new Point(3, 310);
             panel4.Name = "panel4";
             panel4.Size = new Size(246, 53);
             panel4.TabIndex = 4;
@@ -236,7 +238,7 @@
             // panel5
             // 
             panel5.Controls.Add(button4);
-            panel5.Location = new Point(3, 248);
+            panel5.Location = new Point(3, 369);
             panel5.Name = "panel5";
             panel5.Size = new Size(246, 53);
             panel5.TabIndex = 5;
@@ -292,7 +294,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1072, 9);
+            nightControlBox1.Location = new Point(1070, 9);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -313,6 +315,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1211, 46);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // MenuTransicion
             // 
@@ -324,12 +327,22 @@
             sidebarTransition.Interval = 10;
             sidebarTransition.Tick += sidebarTransition_Tick;
             // 
+            // pnlContent
+            // 
+            pnlContent.BackColor = SystemColors.AppWorkspace;
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(249, 46);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(962, 602);
+            pnlContent.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1241, 648);
+            Controls.Add(pnlContent);
             Controls.Add(sidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -375,5 +388,6 @@
         private Button button6;
         private Panel panel8;
         private Button button2;
+        private Panel pnlContent;
     }
 }

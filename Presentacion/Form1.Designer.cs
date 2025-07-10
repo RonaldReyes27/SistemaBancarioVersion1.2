@@ -112,7 +112,7 @@
             menuContainer.Location = new Point(0, 59);
             menuContainer.Margin = new Padding(0);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(246, 189);
+            menuContainer.Size = new Size(246, 65);
             menuContainer.TabIndex = 6;
             // 
             // panel3
@@ -155,7 +155,7 @@
             button5.ForeColor = Color.White;
             button5.Image = Properties.Resources.grupo_de_usuario;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(-5, -7);
+            button5.Location = new Point(-4, -7);
             button5.Margin = new Padding(0);
             button5.Name = "button5";
             button5.Size = new Size(270, 68);
@@ -188,11 +188,12 @@
             button6.Text = "          Historial";
             button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // panel8
             // 
             panel8.Controls.Add(button2);
-            panel8.Location = new Point(3, 251);
+            panel8.Location = new Point(3, 127);
             panel8.Name = "panel8";
             panel8.Size = new Size(246, 53);
             panel8.TabIndex = 5;
@@ -211,11 +212,12 @@
             button2.Text = "          Depósito";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_2;
             // 
             // panel4
             // 
             panel4.Controls.Add(button3);
-            panel4.Location = new Point(3, 310);
+            panel4.Location = new Point(3, 186);
             panel4.Name = "panel4";
             panel4.Size = new Size(246, 53);
             panel4.TabIndex = 4;
@@ -234,11 +236,12 @@
             button3.Text = "          Retiro";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // panel5
             // 
             panel5.Controls.Add(button4);
-            panel5.Location = new Point(3, 369);
+            panel5.Location = new Point(3, 245);
             panel5.Name = "panel5";
             panel5.Size = new Size(246, 53);
             panel5.TabIndex = 5;
@@ -257,6 +260,7 @@
             button4.Text = "          Transacción";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label1
             // 
@@ -294,7 +298,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1070, 9);
+            nightControlBox1.Location = new Point(781, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -313,7 +317,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1211, 46);
+            panel1.Size = new Size(920, 46);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -329,11 +333,11 @@
             // 
             // pnlContent
             // 
-            pnlContent.BackColor = SystemColors.AppWorkspace;
+            pnlContent.BackColor = Color.White;
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(249, 46);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(962, 602);
+            pnlContent.Size = new Size(671, 602);
             pnlContent.TabIndex = 2;
             // 
             // Form1
@@ -341,7 +345,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1241, 648);
+            ClientSize = new Size(950, 648);
             Controls.Add(pnlContent);
             Controls.Add(sidebar);
             Controls.Add(panel1);

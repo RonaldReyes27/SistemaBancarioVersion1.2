@@ -131,5 +131,25 @@ namespace Presentacion
         private void button1_Click_1(object sender, EventArgs e) { }
         private void Form1_Load_1(object sender, EventArgs e) { }
         private void panel1_Paint(object sender, PaintEventArgs e) { }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormHistorial());
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormDeposito());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormRetiro());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormTransaccion());
+        }
     }
 }

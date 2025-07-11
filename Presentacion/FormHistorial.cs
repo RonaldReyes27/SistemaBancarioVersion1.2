@@ -119,5 +119,13 @@ namespace Presentacion
             dgvTransacciones.DataSource = dt;
             dgvTransacciones.Columns["Monto"].DefaultCellStyle.Format = "C";
         }
+
+        private void txtBuscarId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancela la tecla si no es número
+            }
+        }
     }
 }

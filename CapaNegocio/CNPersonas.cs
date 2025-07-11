@@ -9,9 +9,11 @@ namespace CapaNegocios
 {
     public class CNPersonas
     {
+        // // Se crea una instancia de la clase de la Capa de Datos.
         private readonly string cadenaConexion = ConexionBD.conexion;
 
         // Registra un nuevo cliente en la base de datos
+        /// Aplica reglas de negocio y luego llama a la Capa de Datos para registrar.
         public void RegistrarCliente(string nombre, string numCuenta, string tipoCuenta, decimal saldoInicial)
         {
             if (string.IsNullOrWhiteSpace(nombre))
@@ -32,7 +34,7 @@ namespace CapaNegocios
             }
         }
 
-        // Actualiza el saldo de una cuenta en la base de datos
+        // Método normal: Actualiza el saldo de una cuenta.
         public void ActualizarSaldo(int idCuenta, decimal nuevoSaldo)
         {
             using (SqlConnection conn = new SqlConnection(cadenaConexion))
@@ -45,7 +47,7 @@ namespace CapaNegocios
                 cmd.ExecuteNonQuery();
             }
         }
-
+        //  Método normal: obtiene una cuenta de BD y devuelve una instancia de clase hija.
         // Obtiene una cuenta por su ID
         public Cuenta ObtenerCuentaPorId(int idCuenta)
         {

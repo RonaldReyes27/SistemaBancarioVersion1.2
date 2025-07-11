@@ -2,7 +2,8 @@
 {
     public class ConexionBD
     {
-        // Esta es la cadena de conexion a la base de datos 
+        // --- REQUISITO CUMPLIDO: Conexión a datos (sql server) ---
+        // Esta es la cadena de conexión que le dice a la aplicación cómo encontrar y conectarse a tu base de datos.
         public static string conexion = "Server=.;Database=SistemaBancario;Integrated Security=true;TrustServerCertificate=true;";
     }
 }

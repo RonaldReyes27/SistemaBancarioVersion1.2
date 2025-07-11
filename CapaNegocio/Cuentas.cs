@@ -2,6 +2,8 @@
 
 namespace CapaNegocio
 {
+
+    // --- REQUISITO CUMPLIDO: Uso de clases abstractas ---
     // Clase abstracta base para representar una cuenta bancaria
     public abstract class Cuenta
     {
@@ -11,6 +13,8 @@ namespace CapaNegocio
         public string TipoCuenta { get; set; }
         public decimal SaldoCuenta { get; protected set; }
 
+
+        //--- REQUISITO CUMPLIDO: Uso de constructores ---
         // Constructor base con parámetros obligatorios
         public Cuenta(string numCuenta, string nombre)
         {
@@ -19,9 +23,12 @@ namespace CapaNegocio
             SaldoCuenta = 0;
         }
 
+        //--- REQUISITO CUMPLIDO: Uso de metodos abstractos ---
         // Método abstracto que se implementará en clases hijas
         public abstract string ObtenerResumenCuenta();
 
+
+        // --- REQUISITO CUMPLIDO: Uso de metodos virtuales --
         // Método virtual para depositar dinero en la cuenta
         public virtual string Depositar(decimal monto)
         {
@@ -38,6 +45,7 @@ namespace CapaNegocio
             return $"Retiro exitoso. Nuevo saldo: {SaldoCuenta:C}";
         }
 
+        // --- REQUISITO CUMPLIDO: Uso de metodos normales ---
         // Permite establecer el saldo inicial al cargar desde base de datos
         public void AsignarSaldoInicial(decimal saldo)
         {

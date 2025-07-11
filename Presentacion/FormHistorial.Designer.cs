@@ -78,6 +78,7 @@
             txtBuscarId.TabIndex = 3;
             txtBuscarId.Text = "Ingrese el ID del Cliente";
             txtBuscarId.Enter += txtBuscarId_Enter;
+            txtBuscarId.KeyPress += txtBuscarId_KeyPress;
             txtBuscarId.Leave += txtBuscarId_Leave;
             // 
             // pnlDatosCliente
@@ -173,7 +174,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 37, 38);
-            ClientSize = new Size(730, 597);
+            ClientSize = new Size(717, 597);
             Controls.Add(pictureBox1);
             Controls.Add(dgvTransacciones);
             Controls.Add(lblDatosClienteTitulo);

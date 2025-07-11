@@ -84,5 +84,29 @@ namespace Presentacion
                 mainForm.AbrirFormularioEnPanel(new FormDashboard());
             }
         }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; // Cancela la tecla si no es válida
+            }
+        }
+
+        private void txtNumCuenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancela la tecla si no es número
+            }
+        }
+
+        private void txtSaldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancela la tecla si no es número
+            }
+        }
     }
 }

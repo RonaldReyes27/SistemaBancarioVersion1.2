@@ -127,6 +127,7 @@
             btnAgregarCliente.TabIndex = 4;
             btnAgregarCliente.Text = "Agregar Cliente";
             btnAgregarCliente.UseVisualStyleBackColor = false;
+            btnAgregarCliente.Click += btnAgregarCliente_Click;
             // 
             // btnDeposito
             // 
@@ -138,6 +139,7 @@
             btnDeposito.TabIndex = 5;
             btnDeposito.Text = "Depósito";
             btnDeposito.UseVisualStyleBackColor = false;
+            btnDeposito.Click += btnDeposito_Click;
             // 
             // btnRetiro
             // 
@@ -150,6 +152,7 @@
             btnRetiro.TabIndex = 6;
             btnRetiro.Text = "Retiro";
             btnRetiro.UseVisualStyleBackColor = false;
+            btnRetiro.Click += btnRetiro_Click;
             // 
             // pnlTotalClientes
             // 

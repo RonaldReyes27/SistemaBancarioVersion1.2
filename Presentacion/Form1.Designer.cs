@@ -32,6 +32,12 @@
             sidebar = new FlowLayoutPanel();
             panel2 = new Panel();
             button1 = new Button();
+            panel8 = new Panel();
+            button2 = new Button();
+            panel4 = new Panel();
+            button3 = new Button();
+            panel5 = new Panel();
+            button4 = new Button();
             menuContainer = new FlowLayoutPanel();
             panel3 = new Panel();
             btnMenu = new Button();
@@ -39,12 +45,6 @@
             button5 = new Button();
             panel7 = new Panel();
             button6 = new Button();
-            panel8 = new Panel();
-            button2 = new Button();
-            panel4 = new Panel();
-            button3 = new Button();
-            panel5 = new Panel();
-            button4 = new Button();
             label1 = new Label();
             btnHam = new PictureBox();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
@@ -54,13 +54,13 @@
             pnlContent = new Panel();
             sidebar.SuspendLayout();
             panel2.SuspendLayout();
+            panel8.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             menuContainer.SuspendLayout();
             panel3.SuspendLayout();
             panel6.SuspendLayout();
             panel7.SuspendLayout();
-            panel8.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHam).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -104,6 +104,78 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_2;
             // 
+            // panel8
+            // 
+            panel8.Controls.Add(button2);
+            panel8.Location = new Point(3, 121);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(246, 53);
+            panel8.TabIndex = 5;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(23, 24, 29);
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Image = Properties.Resources.deposito;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(-4, -7);
+            button2.Name = "button2";
+            button2.Size = new Size(262, 68);
+            button2.TabIndex = 2;
+            button2.Text = "          Depósito";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_2;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(button3);
+            panel4.Location = new Point(3, 180);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(246, 53);
+            panel4.TabIndex = 4;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(23, 24, 29);
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Image = Properties.Resources.retiro;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(-5, -7);
+            button3.Name = "button3";
+            button3.Size = new Size(262, 68);
+            button3.TabIndex = 2;
+            button3.Text = "          Retiro";
+            button3.TextAlign = ContentAlignment.MiddleLeft;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(button4);
+            panel5.Location = new Point(3, 239);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(246, 53);
+            panel5.TabIndex = 5;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(23, 24, 29);
+            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.White;
+            button4.Image = Properties.Resources.transaccion;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.Location = new Point(-4, -7);
+            button4.Name = "button4";
+            button4.Size = new Size(262, 68);
+            button4.TabIndex = 2;
+            button4.Text = "          Transacción";
+            button4.TextAlign = ContentAlignment.MiddleLeft;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // menuContainer
             // 
             menuContainer.BackColor = Color.FromArgb(32, 33, 36);
@@ -113,7 +185,7 @@
             menuContainer.Location = new Point(0, 59);
             menuContainer.Margin = new Padding(0);
             menuContainer.Name = "menuContainer";
-            menuContainer.Size = new Size(246, 65);
+            menuContainer.Size = new Size(246, 59);
             menuContainer.TabIndex = 6;
             // 
             // panel3
@@ -131,7 +203,7 @@
             btnMenu.ForeColor = Color.White;
             btnMenu.Image = Properties.Resources.flecha_abajo;
             btnMenu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenu.Location = new Point(-7, -7);
+            btnMenu.Location = new Point(-7, -4);
             btnMenu.Margin = new Padding(0);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(262, 65);
@@ -181,7 +253,7 @@
             button6.ForeColor = Color.White;
             button6.Image = Properties.Resources.lupa;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-5, -7);
+            button6.Location = new Point(-5, -4);
             button6.Margin = new Padding(0);
             button6.Name = "button6";
             button6.Size = new Size(262, 68);
@@ -190,78 +262,6 @@
             button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
-            // 
-            // panel8
-            // 
-            panel8.Controls.Add(button2);
-            panel8.Location = new Point(3, 127);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(246, 53);
-            panel8.TabIndex = 5;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(23, 24, 29);
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.deposito;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-4, -7);
-            button2.Name = "button2";
-            button2.Size = new Size(262, 68);
-            button2.TabIndex = 2;
-            button2.Text = "          Depósito";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click_2;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(button3);
-            panel4.Location = new Point(3, 186);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(246, 53);
-            panel4.TabIndex = 4;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(23, 24, 29);
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = Properties.Resources.retiro;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-5, -7);
-            button3.Name = "button3";
-            button3.Size = new Size(262, 68);
-            button3.TabIndex = 2;
-            button3.Text = "          Retiro";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(button4);
-            panel5.Location = new Point(3, 245);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(246, 53);
-            panel5.TabIndex = 5;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(23, 24, 29);
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Image = Properties.Resources.transaccion;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-4, -7);
-            button4.Name = "button4";
-            button4.Size = new Size(262, 68);
-            button4.TabIndex = 2;
-            button4.Text = "          Transacción";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
             // 
             // label1
             // 
@@ -358,13 +358,13 @@
             Load += Form1_Load_1;
             sidebar.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             menuContainer.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnHam).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -53,7 +53,7 @@
             pnlOrigen.Controls.Add(cmbCuentaOrigen);
             pnlOrigen.Controls.Add(lblSaldoTitulo);
             pnlOrigen.ForeColor = Color.White;
-            pnlOrigen.Location = new Point(53, 86);
+            pnlOrigen.Location = new Point(21, 82);
             pnlOrigen.Name = "pnlOrigen";
             pnlOrigen.Size = new Size(492, 120);
             pnlOrigen.TabIndex = 6;
@@ -98,7 +98,7 @@
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(108, 30);
+            lblTitulo.Location = new Point(76, 26);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(345, 41);
             lblTitulo.TabIndex = 4;
@@ -110,7 +110,7 @@
             pnlMonto.Controls.Add(btnDepositar);
             pnlMonto.Controls.Add(txtMonto);
             pnlMonto.Controls.Add(lblMonto);
-            pnlMonto.Location = new Point(53, 349);
+            pnlMonto.Location = new Point(21, 345);
             pnlMonto.Name = "pnlMonto";
             pnlMonto.Size = new Size(492, 170);
             pnlMonto.TabIndex = 7;
@@ -136,6 +136,7 @@
             txtMonto.Name = "txtMonto";
             txtMonto.Size = new Size(442, 38);
             txtMonto.TabIndex = 4;
+            txtMonto.KeyPress += txtMonto_KeyPress;
             // 
             // lblMonto
             // 
@@ -154,7 +155,7 @@
             pnlDestino.Controls.Add(cmbCuentaDestino);
             pnlDestino.Controls.Add(lblDestinoTitulo);
             pnlDestino.ForeColor = Color.White;
-            pnlDestino.Location = new Point(53, 223);
+            pnlDestino.Location = new Point(21, 219);
             pnlDestino.Name = "pnlDestino";
             pnlDestino.Size = new Size(492, 120);
             pnlDestino.TabIndex = 8;
@@ -199,7 +200,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 37, 38);
-            ClientSize = new Size(615, 593);
+            ClientSize = new Size(541, 593);
             Controls.Add(pnlDestino);
             Controls.Add(pnlOrigen);
             Controls.Add(lblTitulo);

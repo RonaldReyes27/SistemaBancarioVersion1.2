@@ -15,12 +15,14 @@ namespace Presentacion
     public partial class Form1 : Form
     {
         // --- Variables para las animaciones ---
-        bool sidebarExpand = true;
+        bool sidebarExpand = false;
         bool menuExpand = false;
 
+        // --- REQUISITO CUMPLIDO: Uso de constructores en formularios ---
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         // --- MÉTODO PARA ABRIR FORMULARIOS EN EL PANEL ---
@@ -44,7 +46,7 @@ namespace Presentacion
             fh.Show();
         }
 
-        // --- LÓGICA DE LOS BOTONES DEL MENÚ ---
+      
 
         // Este es el evento para el botón "Clientes"
         private void button5_Click(object sender, EventArgs e)
@@ -73,20 +75,20 @@ namespace Presentacion
             if (menuExpand == false)
             {
                 menuContainer.Height += 10;
-                if (menuContainer.Height >= 179)
+                if (menuContainer.Height >= 186)
                 {
                     MenuTransicion.Stop();
-                    menuContainer.Height = 179;
+                    menuContainer.Height = 186;
                     menuExpand = true;
                 }
             }
             else
             {
                 menuContainer.Height -= 10;
-                if (menuContainer.Height <= 65)
+                if (menuContainer.Height <= 59)
                 {
                     MenuTransicion.Stop();
-                    menuContainer.Height = 65;
+                    menuContainer.Height = 59;
                     menuExpand = false;
                 }
             }
@@ -116,7 +118,7 @@ namespace Presentacion
             }
         }
 
-        // --- OTROS EVENTOS (PUEDES IGNORARLOS SI NO LOS USAS) ---
+        // --- OTROS EVENTOS  ---
 
         private void label1_Click(object sender, EventArgs e) { }
         private void button1_Click(object sender, EventArgs e) { }
@@ -129,8 +131,12 @@ namespace Presentacion
         private void sidebar_Paint(object sender, PaintEventArgs e) { }
         private void Form1_Load(object sender, EventArgs e) { }
         private void button1_Click_1(object sender, EventArgs e) { }
-        private void Form1_Load_1(object sender, EventArgs e) {
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
             AbrirFormularioEnPanel(new FormDashboard());
+            sidebar.Width = 43;
+            sidebarExpand = false;
+            sidebarTransition.Start();
         }
         private void panel1_Paint(object sender, PaintEventArgs e) { }
 
@@ -162,6 +168,11 @@ namespace Presentacion
         private void button1_Click_2(object sender, EventArgs e)
         {
             AbrirFormularioEnPanel(new FormDashboard());
+        }
+
+        private void menuContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

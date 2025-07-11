@@ -103,5 +103,13 @@ namespace Presentacion
                 MessageBox.Show($"Ocurrió un error al realizar el depósito: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancela la tecla si no es número
+            }
+        }
     }
 }

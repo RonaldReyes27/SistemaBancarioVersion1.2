@@ -129,6 +129,7 @@
             txtMonto.Name = "txtMonto";
             txtMonto.Size = new Size(415, 38);
             txtMonto.TabIndex = 4;
+            txtMonto.KeyPress += txtMonto_KeyPress;
             // 
             // lblMonto
             // 
@@ -145,7 +146,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 37, 38);
-            ClientSize = new Size(486, 425);
+            ClientSize = new Size(480, 425);
             Controls.Add(pnlSaldo);
             Controls.Add(cmbClientes);
             Controls.Add(lblTitulo);

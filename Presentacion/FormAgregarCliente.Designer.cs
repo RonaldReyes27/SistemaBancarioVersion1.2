@@ -66,7 +66,7 @@
             btnGuardar.TabIndex = 2;
             btnGuardar.Text = "Guardar Cliente";
             btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += this.btnGuardar_Click;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // lblNumCuenta
             // 
@@ -78,7 +78,6 @@
             lblNumCuenta.Size = new Size(162, 25);
             lblNumCuenta.TabIndex = 3;
             lblNumCuenta.Text = "Número de Cuenta";
-          //  lblNumCuenta.Click += this.lblNumCuenta_Click;
             // 
             // lblNombre
             // 
@@ -90,7 +89,6 @@
             lblNombre.Size = new Size(160, 25);
             lblNombre.TabIndex = 5;
             lblNombre.Text = "Nombre del Titular";
-          // lblNombre.Click += this.lblNombre_Click;
             // 
             // txtNumCuenta
             // 
@@ -99,7 +97,7 @@
             txtNumCuenta.Name = "txtNumCuenta";
             txtNumCuenta.Size = new Size(363, 31);
             txtNumCuenta.TabIndex = 6;
-           // txtNumCuenta.TextChanged += this.txtNumCuenta_TextChanged;
+            txtNumCuenta.KeyPress += txtNumCuenta_KeyPress;
             // 
             // txtNombre
             // 
@@ -108,7 +106,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(363, 31);
             txtNombre.TabIndex = 7;
-         //   txtNombre.TextChanged += this.txtNombre_TextChanged;
+            txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // lblTipoCuenta
             // 
@@ -120,7 +118,6 @@
             lblTipoCuenta.Size = new Size(132, 25);
             lblTipoCuenta.TabIndex = 8;
             lblTipoCuenta.Text = "Tipo de Cuenta";
-           /// lblTipoCuenta.Click += label1_Click;
             // 
             // cmbTipoCuenta
             // 
@@ -131,7 +128,6 @@
             cmbTipoCuenta.Name = "cmbTipoCuenta";
             cmbTipoCuenta.Size = new Size(151, 33);
             cmbTipoCuenta.TabIndex = 9;
-           // cmbTipoCuenta.SelectedIndexChanged += this.cmbTipoCuenta_SelectedIndexChanged;
             // 
             // lblSaldo
             // 
@@ -143,7 +139,6 @@
             lblSaldo.Size = new Size(134, 25);
             lblSaldo.TabIndex = 10;
             lblSaldo.Text = "Depósito Inicial";
-            //lblSaldo.Click += this.lblSaldo_Click;
             // 
             // txtSaldo
             // 
@@ -152,7 +147,7 @@
             txtSaldo.Name = "txtSaldo";
             txtSaldo.Size = new Size(132, 31);
             txtSaldo.TabIndex = 11;
-          //  txtSaldo.TextChanged += this.txtSaldo_TextChanged;
+            txtSaldo.KeyPress += txtSaldo_KeyPress;
             // 
             // btnCancelar
             // 
@@ -166,7 +161,7 @@
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += this.btnCancelar_Click;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // pictureBox1
             // 
@@ -176,7 +171,6 @@
             pictureBox1.Size = new Size(59, 58);
             pictureBox1.TabIndex = 24;
             pictureBox1.TabStop = false;
-           // pictureBox1.Click += pictureBox1_Click;
             // 
             // FormAgregarCliente
             // 

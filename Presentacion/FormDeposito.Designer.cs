@@ -46,7 +46,7 @@
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(53, 48);
+            lblTitulo.Location = new Point(12, 44);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(322, 41);
             lblTitulo.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             cmbClientes.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbClientes.FormattingEnabled = true;
-            cmbClientes.Location = new Point(53, 108);
+            cmbClientes.Location = new Point(12, 104);
             cmbClientes.Name = "cmbClientes";
             cmbClientes.Size = new Size(447, 28);
             cmbClientes.TabIndex = 1;
@@ -68,7 +68,7 @@
             pnlSaldo.Controls.Add(lblSaldoValor);
             pnlSaldo.Controls.Add(lblSaldoTitulo);
             pnlSaldo.ForeColor = Color.White;
-            pnlSaldo.Location = new Point(53, 155);
+            pnlSaldo.Location = new Point(12, 151);
             pnlSaldo.Name = "pnlSaldo";
             pnlSaldo.Size = new Size(447, 82);
             pnlSaldo.TabIndex = 2;
@@ -103,7 +103,7 @@
             pnlAccion.Controls.Add(btnDepositar);
             pnlAccion.Controls.Add(txtMonto);
             pnlAccion.Controls.Add(lblMonto);
-            pnlAccion.Location = new Point(53, 257);
+            pnlAccion.Location = new Point(12, 253);
             pnlAccion.Name = "pnlAccion";
             pnlAccion.Size = new Size(447, 170);
             pnlAccion.TabIndex = 3;
@@ -129,6 +129,7 @@
             txtMonto.Name = "txtMonto";
             txtMonto.Size = new Size(415, 38);
             txtMonto.TabIndex = 4;
+            txtMonto.KeyPress += txtMonto_KeyPress;
             // 
             // lblMonto
             // 
@@ -145,7 +146,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 37, 38);
-            ClientSize = new Size(564, 496);
+            ClientSize = new Size(480, 496);
             Controls.Add(pnlAccion);
             Controls.Add(pnlSaldo);
             Controls.Add(cmbClientes);

@@ -84,6 +84,7 @@
             cmbClientes.Name = "cmbClientes";
             cmbClientes.Size = new Size(447, 28);
             cmbClientes.TabIndex = 5;
+            cmbClientes.SelectedIndexChanged += cmbClientes_SelectedIndexChanged;
             // 
             // lblTitulo
             // 
@@ -119,6 +120,7 @@
             btnRetirar.TabIndex = 4;
             btnRetirar.Text = "Confirmar Retiro";
             btnRetirar.UseVisualStyleBackColor = false;
+            btnRetirar.Click += btnRetirar_Click;
             // 
             // txtMonto
             // 

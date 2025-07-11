@@ -12,29 +12,32 @@ namespace Presentacion
     {
         public FormAgregarCliente()
         {
-            // Esta línea es la que conecta con tu diseño visual. ¡Es muy importante!
             InitializeComponent();
         }
 
-        // Este evento se ejecuta cuando el formulario se carga por primera vez
         private void FormAgregarCliente_Load(object sender, EventArgs e)
         {
-            // --- Propiedades del Formulario ---
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
-
-            // Pre-llenar el ComboBox de Tipo de Cuenta
             cmbTipoCuenta.Items.Add("Ahorros");
             cmbTipoCuenta.Items.Add("Corriente");
-            cmbTipoCuenta.SelectedIndex = 0; // Seleccionar "Ahorros" por defecto
+            cmbTipoCuenta.SelectedIndex = 0;
         }
 
-        // Para crear este evento, ve al diseñador y haz doble clic en el botón "Guardar"
+        // --- NUEVO MÉTODO PARA LIMPIAR LOS CAMPOS ---
+        private void LimpiarCampos()
+        {
+            txtNumCuenta.Clear();
+            txtNombre.Clear();
+            txtSaldo.Clear();
+            cmbTipoCuenta.SelectedIndex = 0;
+            txtNumCuenta.Focus(); // Pone el cursor en el primer campo, listo para el siguiente registro.
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                // 1. Validaciones de los campos
                 if (string.IsNullOrWhiteSpace(txtNumCuenta.Text) ||
                     string.IsNullOrWhiteSpace(txtNombre.Text) ||
                     string.IsNullOrWhiteSpace(txtSaldo.Text))
@@ -49,7 +52,6 @@ namespace Presentacion
                     return;
                 }
 
-                // 2. Llamada a la Capa de Negocio para registrar el cliente
                 CNPersonas cnPersonas = new CNPersonas();
                 cnPersonas.RegistrarCliente(
                     txtNombre.Text,
@@ -58,11 +60,11 @@ namespace Presentacion
                     saldo
                 );
 
-                // 3. Mensaje de éxito y cierre del formulario
-                MessageBox.Show("Cliente guardado con éxito.", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // --- COMPORTAMIENTO MEJORADO ---
+                MessageBox.Show("Cliente agregado con éxito.", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Cierra este formulario para volver a la pantalla principal
-                this.Parent.Controls.Remove(this);
+                // Limpiamos los campos para que se pueda agregar otro cliente.
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
@@ -70,11 +72,17 @@ namespace Presentacion
             }
         }
 
-        // Para crear este evento, ve al diseñador y haz doble clic en el botón "Cancelar"
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            // Simplemente cierra el formulario
-            this.Parent.Controls.Remove(this);
+            // --- COMPORTAMIENTO MEJORADO ---
+            // 1. Mostramos el mensaje de cancelación.
+            MessageBox.Show("Operación cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // 2. Le pedimos al formulario principal que muestre el Dashboard.
+            if (this.ParentForm is Form1 mainForm)
+            {
+                mainForm.AbrirFormularioEnPanel(new FormDashboard());
+            }
         }
     }
 }

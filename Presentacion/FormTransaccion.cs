@@ -20,6 +20,7 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        // Este evento se ejecuta cuando el formulario se carga por primera vez
         private void FormTransaccion_Load(object sender, EventArgs e)
         {
             // --- Propiedades del Formulario ---
@@ -41,15 +42,21 @@ namespace Presentacion
                 cmbCuentaOrigen.DataSource = new List<Cuenta>(listaDeCuentas);
                 cmbCuentaOrigen.DisplayMember = "Nombre";
                 cmbCuentaOrigen.ValueMember = "Id";
-                cmbCuentaOrigen.SelectedIndex = -1;
-                cmbCuentaOrigen.Text = "Seleccione cuenta de origen...";
 
                 // Cargar ComboBox de Destino
                 cmbCuentaDestino.DataSource = new List<Cuenta>(listaDeCuentas);
                 cmbCuentaDestino.DisplayMember = "Nombre";
                 cmbCuentaDestino.ValueMember = "Id";
+
+                // --- CORRECCIÓN AQUÍ ---
+                // Limpiamos la selección inicial para que no aparezca ningún dato.
+                cmbCuentaOrigen.SelectedIndex = -1;
+                cmbCuentaOrigen.Text = "Seleccione cuenta de origen...";
+                lblSaldoOrigen.Text = "Saldo disponible: ";
+
                 cmbCuentaDestino.SelectedIndex = -1;
                 cmbCuentaDestino.Text = "Seleccione cuenta de destino...";
+                lblSaldoDestino.Text = "Saldo actual: ";
             }
             catch (Exception ex)
             {
@@ -124,7 +131,7 @@ namespace Presentacion
                 // 4. Mostrar mensaje de éxito y actualizar la UI
                 MessageBox.Show("¡Transferencia realizada con éxito!", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Refrescar saldos en pantalla
+                // Refrescar saldos en pantalla y limpiar campos
                 lblSaldoOrigen.Text = $"Saldo disponible: {cuentaOrigen.SaldoCuenta:C}";
                 lblSaldoDestino.Text = $"Saldo actual: {cuentaDestino.SaldoCuenta:C}";
                 txtMonto.Clear();

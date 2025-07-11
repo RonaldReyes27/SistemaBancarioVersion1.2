@@ -60,6 +60,7 @@
             cmbClientes.Name = "cmbClientes";
             cmbClientes.Size = new Size(447, 28);
             cmbClientes.TabIndex = 1;
+            cmbClientes.SelectedIndexChanged += cmbClientes_SelectedIndexChanged;
             // 
             // pnlSaldo
             // 
@@ -119,6 +120,7 @@
             btnDepositar.TabIndex = 4;
             btnDepositar.Text = "Confirmar Depósito";
             btnDepositar.UseVisualStyleBackColor = false;
+            btnDepositar.Click += btnDepositar_Click;
             // 
             // txtMonto
             // 

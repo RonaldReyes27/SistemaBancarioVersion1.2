@@ -25,6 +25,11 @@ namespace Presentacion
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
 
+            // --- CORRECCIÓN AQUÍ: HACEMOS LA TABLA DE SOLO LECTURA ---
+            dgvUltimosClientes.ReadOnly = true;
+            dgvUltimosClientes.AllowUserToAddRows = false; // Opcional: previene que aparezca una fila vacía al final
+            dgvUltimosClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Opcional: selecciona la fila completa al hacer clic
+
             // Iniciar la carga de datos del dashboard
             CargarDatosDashboard();
         }

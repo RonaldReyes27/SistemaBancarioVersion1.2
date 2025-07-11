@@ -76,7 +76,7 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 46);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(249, 602);
+            sidebar.Size = new Size(249, 685);
             sidebar.TabIndex = 1;
             sidebar.Paint += sidebar_Paint;
             // 
@@ -299,7 +299,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(781, 0);
+            nightControlBox1.Location = new Point(861, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -318,7 +318,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(920, 46);
+            panel1.Size = new Size(1000, 46);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -338,7 +338,7 @@
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(249, 46);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(671, 602);
+            pnlContent.Size = new Size(751, 685);
             pnlContent.TabIndex = 2;
             pnlContent.Paint += pnlContent_Paint;
             // 
@@ -347,7 +347,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(950, 648);
+            ClientSize = new Size(1030, 731);
             Controls.Add(pnlContent);
             Controls.Add(sidebar);
             Controls.Add(panel1);

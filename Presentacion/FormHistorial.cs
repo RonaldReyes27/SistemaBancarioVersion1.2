@@ -11,6 +11,9 @@ namespace Presentacion
 {
     public partial class FormHistorial : Form
     {
+        // Variable para guardar el texto del placeholder
+        private string placeholderText = "Ingrese el ID del Cliente";
+
         public FormHistorial()
         {
             // Esta línea es la que conecta con tu diseño visual. ¡Es muy importante!
@@ -23,7 +26,12 @@ namespace Presentacion
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
 
+            // --- Configuración Inicial del Placeholder ---
+            txtBuscarId.Text = placeholderText;
+            txtBuscarId.ForeColor = Color.Gray;
+
             // --- Estilos del DataGridView ---
+            dgvTransacciones.ReadOnly = true;
             dgvTransacciones.BackgroundColor = Color.FromArgb(45, 45, 48);
             dgvTransacciones.BorderStyle = BorderStyle.None;
             dgvTransacciones.RowHeadersVisible = false;
@@ -37,10 +45,34 @@ namespace Presentacion
             dgvTransacciones.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        // Para crear este evento, ve al diseñador y haz doble clic en el botón "Buscar"
+        // --- Eventos del Placeholder ---
+
+        // Este evento se dispara cuando el usuario HACE CLIC en el TextBox
+        private void txtBuscarId_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscarId.Text == placeholderText)
+            {
+                txtBuscarId.Text = "";
+                txtBuscarId.ForeColor = Color.Black; // O Color.White si tu TextBox es oscuro
+            }
+        }
+
+        // Este evento se dispara cuando el usuario HACE CLIC FUERA del TextBox
+        private void txtBuscarId_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscarId.Text))
+            {
+                txtBuscarId.Text = placeholderText;
+                txtBuscarId.ForeColor = Color.Gray;
+            }
+        }
+
+
+        // --- Evento del Botón Buscar ---
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtBuscarId.Text, out int idCliente))
+            // Validamos que el texto no sea el placeholder antes de buscar
+            if (txtBuscarId.Text == placeholderText || !int.TryParse(txtBuscarId.Text, out int idCliente))
             {
                 MessageBox.Show("Por favor, ingrese un ID de cliente válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -53,18 +85,14 @@ namespace Presentacion
 
                 if (cuentaEncontrada != null)
                 {
-                    // Actualizamos los labels con la información encontrada
                     lblNombreCliente.Text = $"Nombre: {cuentaEncontrada.Nombre}";
                     lblNumCuentaCliente.Text = $"Nro. Cuenta: {cuentaEncontrada.NumCuenta}";
                     lblSaldoCliente.Text = $"Saldo: {cuentaEncontrada.SaldoCuenta:C}";
-
-                    // Este método simula la carga de transacciones en la tabla
                     CargarTransaccionesSimuladas();
                 }
                 else
                 {
                     MessageBox.Show("No se encontró ningún cliente con ese ID.", "Búsqueda Fallida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Limpiamos los labels si no se encuentra nada
                     lblNombreCliente.Text = "Nombre: ";
                     lblNumCuentaCliente.Text = "Nro. Cuenta: ";
                     lblSaldoCliente.Text = "Saldo: ";
@@ -77,7 +105,6 @@ namespace Presentacion
             }
         }
 
-        // Método de ejemplo para simular la carga de datos en el DataGridView
         private void CargarTransaccionesSimuladas()
         {
             DataTable dt = new DataTable();

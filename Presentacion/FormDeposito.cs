@@ -24,7 +24,6 @@ namespace Presentacion
         private void FormDeposito_Load(object sender, EventArgs e)
         {
             // --- Propiedades del Formulario ---
-            this.BackColor = Color.FromArgb(37, 37, 38);
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
 
@@ -60,12 +59,12 @@ namespace Presentacion
             // Verificamos que haya un cliente seleccionado
             if (cmbClientes.SelectedItem is Cuenta cuentaSeleccionada)
             {
-                // Actualizamos el label con el saldo del cliente
+                // Actualizamos el label con el saldo del cliente, formateado como moneda.
                 lblSaldoValor.Text = $"{cuentaSeleccionada.SaldoCuenta:C}";
             }
         }
 
-        // Para crear este evento, ve al diseñador y haz doble clic en el botón "Confirmar Depósito"
+        // Este evento se dispara cuando se hace clic en el botón "Confirmar Depósito"
         private void btnDepositar_Click(object sender, EventArgs e)
         {
             // 1. Validar que se seleccionó un cliente
@@ -84,18 +83,18 @@ namespace Presentacion
 
             try
             {
-                // 3. Realizar la operación de depósito
+                // 3. Realizar la operación de depósito en el objeto
                 Cuenta cuentaSeleccionada = (Cuenta)cmbClientes.SelectedItem;
-                string resultado = cuentaSeleccionada.Depositar(monto);
+                cuentaSeleccionada.Depositar(monto);
 
                 // 4. Actualizar el saldo en la base de datos
                 CNPersonas cnPersonas = new CNPersonas();
                 cnPersonas.ActualizarSaldo(cuentaSeleccionada.Id, cuentaSeleccionada.SaldoCuenta);
 
-                // 5. Mostrar mensaje de éxito y actualizar la UI
-                MessageBox.Show(resultado, "Depósito Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // 5. Mostrar mensaje de éxito
+                MessageBox.Show("Depósito realizado con éxito.", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Refrescamos el saldo en pantalla
+                // 6. Refrescar la UI y limpiar los campos
                 lblSaldoValor.Text = $"{cuentaSeleccionada.SaldoCuenta:C}";
                 txtMonto.Clear();
             }

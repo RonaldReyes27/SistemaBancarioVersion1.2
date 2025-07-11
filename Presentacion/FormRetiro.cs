@@ -59,12 +59,12 @@ namespace Presentacion
             // Verificamos que haya un cliente seleccionado
             if (cmbClientes.SelectedItem is Cuenta cuentaSeleccionada)
             {
-                // Actualizamos el label con el saldo del cliente
+                // Actualizamos el label con el saldo del cliente, formateado como moneda.
                 lblSaldoValor.Text = $"{cuentaSeleccionada.SaldoCuenta:C}";
             }
         }
 
-        // Para crear este evento, ve al diseñador y haz doble clic en el botón "Confirmar Retiro"
+        // Este evento se dispara cuando se hace clic en el botón "Confirmar Retiro"
         private void btnRetirar_Click(object sender, EventArgs e)
         {
             // 1. Validar que se seleccionó un cliente
@@ -83,21 +83,21 @@ namespace Presentacion
 
             try
             {
-                // 3. Realizar la operación de retiro
+                // 3. Realizar la operación de retiro en el objeto
                 Cuenta cuentaSeleccionada = (Cuenta)cmbClientes.SelectedItem;
                 string resultado = cuentaSeleccionada.Retirar(monto);
 
-                // 4. Actualizar el saldo en la base de datos SOLO si el retiro fue exitoso
+                // 4. Mostrar el resultado de la operación (éxito o error como "Fondos insuficientes")
+                MessageBox.Show(resultado, "Resultado del Retiro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // 5. Actualizar el saldo en la base de datos SOLO SI el retiro fue exitoso
                 if (!resultado.Contains("Fondos insuficientes") && !resultado.Contains("debe ser positivo"))
                 {
                     CNPersonas cnPersonas = new CNPersonas();
                     cnPersonas.ActualizarSaldo(cuentaSeleccionada.Id, cuentaSeleccionada.SaldoCuenta);
                 }
 
-                // 5. Mostrar mensaje de éxito o error y actualizar la UI
-                MessageBox.Show(resultado, "Resultado del Retiro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Refrescamos el saldo en pantalla
+                // 6. Refrescar la UI y limpiar los campos
                 lblSaldoValor.Text = $"{cuentaSeleccionada.SaldoCuenta:C}";
                 txtMonto.Clear();
             }

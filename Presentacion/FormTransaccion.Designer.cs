@@ -79,6 +79,7 @@
             cmbCuentaOrigen.Name = "cmbCuentaOrigen";
             cmbCuentaOrigen.Size = new Size(447, 33);
             cmbCuentaOrigen.TabIndex = 5;
+            cmbCuentaOrigen.SelectedIndexChanged += cmbCuentaOrigen_SelectedIndexChanged;
             // 
             // lblSaldoTitulo
             // 
@@ -126,6 +127,7 @@
             btnDepositar.TabIndex = 4;
             btnDepositar.Text = "Confirmar Transferencia";
             btnDepositar.UseVisualStyleBackColor = false;
+            btnDepositar.Click += btnTransferir_Click;
             // 
             // txtMonto
             // 
@@ -178,6 +180,7 @@
             cmbCuentaDestino.Name = "cmbCuentaDestino";
             cmbCuentaDestino.Size = new Size(447, 33);
             cmbCuentaDestino.TabIndex = 5;
+            cmbCuentaDestino.SelectedIndexChanged += cmbCuentaDestino_SelectedIndexChanged;
             // 
             // lblDestinoTitulo
             // 

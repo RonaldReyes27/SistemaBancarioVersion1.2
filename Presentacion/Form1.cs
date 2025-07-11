@@ -24,7 +24,7 @@ namespace Presentacion
         }
 
         // --- MÉTODO PARA ABRIR FORMULARIOS EN EL PANEL ---
-        private void AbrirFormularioEnPanel(object formHijo)
+        public void AbrirFormularioEnPanel(object formHijo)
         {
             // Si ya hay otro formulario en el panel, lo eliminamos
             if (this.pnlContent.Controls.Count > 0)
@@ -150,6 +150,16 @@ namespace Presentacion
         private void button4_Click(object sender, EventArgs e)
         {
             AbrirFormularioEnPanel(new FormTransaccion());
+        }
+
+        private void pnlContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            AbrirFormularioEnPanel(new FormDashboard());
         }
     }
 }

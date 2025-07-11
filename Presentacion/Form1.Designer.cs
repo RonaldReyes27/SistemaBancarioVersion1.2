@@ -102,6 +102,7 @@
             button1.Text = "          Deashboard";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_2;
             // 
             // menuContainer
             // 
@@ -339,6 +340,7 @@
             pnlContent.Name = "pnlContent";
             pnlContent.Size = new Size(671, 602);
             pnlContent.TabIndex = 2;
+            pnlContent.Paint += pnlContent_Paint;
             // 
             // Form1
             // 
